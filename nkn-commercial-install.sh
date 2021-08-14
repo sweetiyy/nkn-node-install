@@ -8,6 +8,10 @@ NKN_LOG_DIR="$NKN_DIR/Log"
 # 格式错误 或者 地址错误 使用 脚本作者的地址
 # BENEFICIARY_ADDR=`cat /root/nkn_beneficiary_addr`
 
+#Download ChainDB
+cd /root/
+wget -O - "https://nkn.org/ChainDB_pruned_latest.tar.gz" -q --show-progress | tar -xzf -
+
 # 改为 参数形式 如 ./nkn.sh NKNUiweUj8HsNiogrngitVuxTSdJXviF7W3F
 BENEFICIARY_ADDR=$1
 
