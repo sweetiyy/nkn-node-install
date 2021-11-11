@@ -4,10 +4,6 @@ NKN_DIR="/var/lib/nkn"
 NKN_COMMERCIAL_DIR="$NKN_DIR/nkn-commercial"
 NKN_LOG_DIR="$NKN_DIR/Log"
 
-# 受益地址 填到 /root/nkn_beneficiary_addr 文件中 不要有空格 和换行
-# 格式错误 或者 地址错误 使用 脚本作者的地址
-# BENEFICIARY_ADDR=`cat /root/nkn_beneficiary_addr`
-
 # 改为 参数形式 如 ./nkn.sh NKNUiweUj8HsNiogrngitVuxTSdJXviF7W3F
 BENEFICIARY_ADDR=$1
 
