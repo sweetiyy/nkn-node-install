@@ -4,6 +4,10 @@ NKN_DIR="/var/lib/nkn"
 NKN_COMMERCIAL_DIR="$NKN_DIR/nkn-commercial"
 NKN_LOG_DIR="$NKN_DIR/Log"
 
+# 受益地址 填到 /root/nkn_beneficiary_addr 文件中 不要有空格 和换行
+# 格式错误 或者 地址错误 使用 脚本作者的地址
+# BENEFICIARY_ADDR=`cat /root/nkn_beneficiary_addr`
+
 # 改为 参数形式 如 ./nkn.sh NKNUiweUj8HsNiogrngitVuxTSdJXviF7W3F
 BENEFICIARY_ADDR=$1
 
@@ -46,6 +50,14 @@ cat <<EOF > /tmp/config.json
 EOF
 
 mv /tmp/config.json $NKN_COMMERCIAL_DIR/config.json
+
+
+# step 2.x (ChainDB)
+if [ -d "/root/ChainDB" ]; then
+  mv /root/ChainDB $NKN_DIR/ChainDB
+fi
+# step 2.x
+
 
 # step 2.3 (nkn-commercial install)
 cd $NKN_COMMERCIAL_DIR
